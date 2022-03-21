@@ -19,15 +19,6 @@
     <!-- <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script> -->
-    <script>
-        window.onload = function () {
-          document
-            .querySelector("[gps-camera]")
-            .addEventListener("gps-camera-update-position", function (data) {
-              document.querySelector(".overlay").innerHTML="<pre>"+JSON.stringify(data,null,2)+"</pre>";
-            });
-        };
-      </script>
   <style>
     .overlay {
       position: absolute;
@@ -47,7 +38,19 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <div class="overlay">
+  <script>
+    window.onload = function () {
+      alert("onload");
+      document
+        .querySelector("[gps-camera]")
+        .addEventListener("gps-camera-update-position", function (data) {
+          alert("on-update");
+          document.querySelector(".overlay").innerHTML="<pre>"+JSON.stringify(data,null,2)+"</pre>";
+        });
+    };
+  </script>
+
+  <div class="overlay">
         HERE COMES SOMETHING 3
     </div>
     <a-scene
