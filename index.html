@@ -39,15 +39,14 @@
 
 <body style='margin: 0; overflow: hidden;'>
   <script>
-    window.onload = function () {
-      alert("onload");
-      document
-        .querySelector("[gps-camera]")
-        .addEventListener("gps-camera-update-position", function (data) {
-          alert("on-update");
+    AFRAME.registerComponent('foo', {
+    init: function() {
+        window.addEventListener('gps-camera-update-position', e => {
           document.querySelector(".overlay").innerHTML="<pre>"+JSON.stringify(data,null,2)+"</pre>";
         });
-    };
+    }
+});
+
   </script>
 
   <div class="overlay">
