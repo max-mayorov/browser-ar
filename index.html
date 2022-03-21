@@ -23,7 +23,7 @@
         window.onload = function () {
           document
             .querySelector("a-camera")
-            .addEventListener("gps-camera-update-positon", function (data) {
+            .addEventListener("gps-camera-update-position", function (data) {
               document.querySelector(".overlay").innerHTML=JSON.stringify(data);
             });
         };
