@@ -41,6 +41,7 @@
   <script>
     AFRAME.registerComponent('foo', {
     init: function() {
+      alert("init");
         window.addEventListener('gps-camera-update-position', e => {
           document.querySelector(".overlay").innerHTML="<pre>"+JSON.stringify(data,null,2)+"</pre>";
         });
@@ -50,7 +51,7 @@
   </script>
 
   <div class="overlay">
-        HERE COMES SOMETHING 3
+        HERE COMES SOMETHING 4
     </div>
     <a-scene
         id="scene"
