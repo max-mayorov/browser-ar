@@ -41,7 +41,6 @@
   <script>
     AFRAME.registerComponent('foo', {
     init: function() {
-      alert("init");
       window.addEventListener('gps-camera-update-position', e => {
           alert("update");
           document.querySelector(".overlay").innerHTML="<pre>"+JSON.stringify(e,null,2)+"</pre>";
