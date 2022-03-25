@@ -9,7 +9,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
   <script>
-    AFRAME.registerComponent('camera', {
+    AFRAME.registerComponent('cam', {
       init: function () {
         window.addEventListener('gps-camera-update-positon', (x) => {
           // redirect to custom URL
@@ -28,7 +28,7 @@
         scale="120 120 120"
         gps-entity-place="latitude:  50.88251; longitude: 4.78295;"
       ></a-text>
-      <a-camera gps-camera rotation-reader camera> </a-camera>
+      <a-camera gps-camera rotation-reader cam> </a-camera>
     </a-scene>
   </body>
 </html>
